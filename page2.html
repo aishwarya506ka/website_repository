@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><body><form>
+  Name: <input type="text" name="name"><br>
+  Email: <input type="email" name="email"><br>
+  Phone: <input type="tel" name="phone"><br>
+  <button type="submit">Save</button>
+</form>
+<script>
+  function saveCustomer() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    let customers = JSON.parse(localStorage.getItem("customers") || "[]");
+    customers.push({ name, email });
+    localStorage.setItem("customers", JSON.stringify(customers));
+    alert("Customer saved locally!");
+  }
+</script>
+
+<form onsubmit="saveCustomer(); return false;">
+  Name: <input id="name" type="text"><br>
+  Email: <input id="email" type="email"><br>
+  <button type="submit">Save</button>
+</form>
+</body>
+</html>
