@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style2.css">
+  <meta charset="UTF-8">
+  <title>Travel with us</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+    }
+
+    
+    .content {
+      flex: 1;
+      padding: 100px 20px 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: cursive;
+      color: rgb(29, 59, 114);
+    }
+
+    .subtitle {
+      color: rgb(29, 59, 114);
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: rgb(29, 59, 114);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #1a3d7a;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: azure;
+      text-align: center;
+      padding: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .menu a {
+        padding: 5px 0;
+      }
+
+      .button-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">TravelWithUs🧳</div>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Destinations</a>
+      <a href="choice.html">Packages</a>
+      <a href="#">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>TravelWithUs🧳</h1>
+    <div class="subtitle">Book your tour now</div>
+
+    <div class="button-container">
+      <a href="signup.html" class="btn">Sign Up</a>
+      <a href="choice.html" class="btn">Book your trips</a>
+    </div>
+  </div>
+
+  <footer>
+    Created with &#10084;<br>Since 1986
+  </footer>
+
+  <script>
+    const images = [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e", // Beach
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb", // Mountain
+      "https://images.unsplash.com/photo-1526779259212-756e0e86a5a0", // Temple
+      "https://images.unsplash.com/photo-1493558103817-58b2924bce98", // Eiffel Tower
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d"  // Plane
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+      document.body.style.backgroundImage = `url('${images[index]}')`;
+      index = (index + 1) % images.length;
+    }
+
+    // Set initial image
+    changeBackground();
+
+    // Change every 6 seconds
+    setInterval(changeBackground, 6000);
+  </script>
+
+</body>
+</html>
